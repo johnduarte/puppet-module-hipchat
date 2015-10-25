@@ -7,11 +7,12 @@ class hipchat::repo {
 			  location          => 'http://downloads.hipchat.com/linux/apt',
 			  release           => 'stable',
 			  repos             => 'main',
-			  include_src       => false,
+			  include           => { 'src' => false },
 			}
 			
 			apt::key { 'hipchat':
-			  key_source => 'https://www.hipchat.com/keys/hipchat-linux.key',
+			  id     => '69F57C04EA38EEE7A47E9BCCAAD4AA21729B5780',
+			  source => 'https://www.hipchat.com/keys/hipchat-linux.key',
 			}
 			
     }
